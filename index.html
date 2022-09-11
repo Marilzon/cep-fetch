@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/styles.css">
-	<title>Consultando CEP por FETCH</title>
-</head>
-<body>
-    <main id="root">
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="src/css/styles.css">
+	<title>Consultando CEP com FETCH API</title>
+</head>
+
+<body>
+	<main id="root">
+		<form action="">
+			<div class="form-group">
+				<label for="cep">CEP</label>
+				<input class="form-control" type="text" id="cep">
+				<small id="fetch-handler-status">Pendente</small>
+			</div>
+			<div class="form-group">
+				<label for="logradouro">LOGRADOURO</label>
+				<input class="form-control" type="text" id="logradouro">
+				<small>Rua</small>
+			</div>
+			<div class="form-group">
+				<label for="bairro">BAIRRO</label>
+				<input class="form-control" type="text" id="bairro">
+				<small>Bairro.</small>
+			</div>
+			<div class="form-group">
+				<label for="localidade">LOCALIDADE</label>
+				<input class="form-control" type="text" id="localidade">
+				<small>Cidade</small>
+			</div>
+			<div class="form-group">
+				<label for="uf">UF</label>
+				<input class="form-control" type="text" id="uf">
+				<small>Estado</small>
+			</div>
+
+		</form>
 	</main>
 	<script src="src/js/index.js"></script>
 </body>
+
 </html>
