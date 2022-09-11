@@ -18,7 +18,7 @@ html {
 }
 
 .form {
-	margin: 5%;
+	margin: 10%;
 	padding: 5%;
 	border-radius: 8px;
 	background: rgb(255, 255, 255);
@@ -34,3 +34,11 @@ html {
 	display: flex;
 	flex-direction: column;
 }
+
+.form-control {
+	font-size: 1.2rem;
+	padding:5px 10px;
+	border: 1px solid rgb(128, 128, 128);
+	border-radius: 4px;
+}
+
