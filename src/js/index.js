@@ -24,26 +24,30 @@ function dinamicCEPValues(data) {
 }
 
 function fetchCEP(CEPselector, DOMevent) {
-	CEPselector.addEventListener(DOMevent, () => {
-		let cepValue = CEPselector.value.replace("-", "")
-		const options = {
-			method: 'GET',
-			mode: 'cors',
-			cache: 'default'
-		}
+	CEPselector.addEventListener(DOMevent, (e) => {
+		let key = e.which || e.keyCode
+		if (key == 13) {
+			let cepValue = CEPselector.value.replace("-", "")
+			const options = {
+				method: 'GET',
+				mode: 'cors',
+				cache: 'default'
+			}
 
-		fetch(`https://viacep.com.br/ws/${cepValue}/json/`, options)
-			.then(response => {
-				statusHandler.innerText = `CEP Encontrado!`
-				statusHandler.style.color = "green"
-				response.json().then(data => dinamicCEPValues(data))
-			})
-			.catch(() => {
-				statusHandler.innerText = `Erro: entrada invalida!`
-				statusHandler.style.color = "red"
-				clearAddressText()
-			})
+			fetch(`https://viacep.com.br/ws/${cepValue}/json/`, options)
+				.then(response => {
+					statusHandler.innerText = `CEP Encontrado!`
+					statusHandler.style.color = "green"
+					response.json().then(data => dinamicCEPValues(data))
+				})
+				.catch(() => {
+					statusHandler.innerText = `Erro: entrada invalida!`
+					statusHandler.style.color = "red"
+					clearAddressText()
+				})
+		}
 	})
 }
 
-fetchCEP(cep, "blur")
+fetchCEP(cep, "keyup")
+
